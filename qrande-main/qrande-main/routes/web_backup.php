@@ -1,0 +1,46 @@
+<?php
+$router->get('/', function() {
+    require_once __DIR__ . '/../views/welcome.php';
+});
+$router->get('table/{id}', 'CustomerController@table');
+$router->get('menu/{tableId}', 'CustomerController@menu');
+$router->get('order-status/{orderId}', 'CustomerController@orderStatus');
+$router->get('admin', 'AdminController@dashboard');
+$router->get('admin/login', 'AdminController@loginForm');
+$router->post('admin/login', 'AdminController@login');
+$router->get('admin/logout', 'AdminController@logout');
+$router->get('admin/menu', 'AdminController@menu');
+$router->get('admin/menu/add', 'AdminController@addMenuItem');
+$router->post('admin/menu/add', 'AdminController@addMenuItem');
+$router->get('admin/menu/edit/{id}', 'AdminController@editMenuItem');
+$router->post('admin/menu/edit/{id}', 'AdminController@editMenuItem');
+$router->get('admin/menu/delete/{id}', 'AdminController@deleteMenuItem');
+$router->get('admin/categories/add', 'AdminController@addCategory');
+$router->post('admin/categories/add', 'AdminController@addCategory');
+$router->get('admin/categories/edit/{id}', 'AdminController@editCategory');
+$router->post('admin/categories/edit/{id}', 'AdminController@editCategory');
+$router->get('admin/categories/delete/{id}', 'AdminController@deleteCategory');
+$router->get('admin/tables', 'AdminController@tables');
+$router->get('admin/tables/add', 'AdminController@addTable');
+$router->post('admin/tables/add', 'AdminController@addTable');
+$router->get('admin/tables/edit/{id}', 'AdminController@editTable');
+$router->post('admin/tables/edit/{id}', 'AdminController@editTable');
+$router->get('admin/tables/delete/{id}', 'AdminController@deleteTable');
+$router->get('admin/tables/qr/{id}', 'AdminController@qrCode');
+$router->get('admin/orders', 'AdminController@orders');
+$router->get('admin/orders/view/{id}', 'AdminController@viewOrder');
+$router->get('admin/orders/complete/{id}', 'AdminController@completeOrder');
+$router->get('admin/waiter-calls', 'AdminController@waiterCalls');
+$router->get('admin/calls/complete/{id}', 'AdminController@completeWaiterCall');
+$router->get('admin/reports', 'AdminController@reports');
+$router->get('admin/reports/sales', 'AdminController@salesReport');
+$router->get('admin/reports/popular-items', 'AdminController@popularItemsReport');
+$router->get('api/menu/{tableId}', 'ApiController@getMenu');
+$router->post('api/place-order', 'CustomerController@placeOrder'); // CustomerController'a yönlendirildi
+$router->get('api/order/{id}/status', 'ApiController@getOrderStatus');
+$router->post('api/call-waiter', 'CustomerController@callWaiter'); // CustomerController'a yönlendirildi
+$router->get('api/waiter-calls/pending', 'ApiController@getPendingCalls');
+$router->get('license-expired', function() {
+    require_once __DIR__ . '/../views/license-expired.php';
+});
+

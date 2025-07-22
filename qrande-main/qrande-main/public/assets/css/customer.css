@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.category {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.category:last-child {
+    border-bottom: none;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.menu-item p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.cart-summary h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+.remove-from-cart {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.remove-from-cart:hover {
+    opacity: 0.9;
+}
+
+#cart-total {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#place-order, #call-waiter {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#call-waiter {
+    background-color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-item .price {
+        margin-top: 5px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+/* Mesaj stilleri */
+.message {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Buton yükleme durumu */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Sepete ekle butonu */
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+.add-to-cart:active {
+    transform: scale(0.98);
+}
+
+/* Menü öğesi düzeni iyileştirmesi */
+.menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+.menu-item-info {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.menu-item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Sepet özeti iyileştirmesi */
+.cart-summary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.cart-total-row {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 2px solid #007bff;
+}
+
+.cart-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cart-buttons .btn {
+    flex: 1;
+    margin: 0;
+}
+
